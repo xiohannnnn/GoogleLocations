@@ -1,6 +1,6 @@
 # GoogleLocation
 
-[link](https://thatguywiththatname.github.io/GoogleLocations/)
+[link](https://thatguywiththatname.github.io/GoogleLocations/source)
 
 A website that plots all of the location data that google has collected from you
 
