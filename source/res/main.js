@@ -38,7 +38,8 @@ function onReaderDone(event){
   console.log("Refresh the page to load another file");
 }
 
-document.getElementById("upload").addEventListener("change", (event) => {
+document.getElementById("uploadButton").addEventListener("change", (event) => {
+  $("#uploadContainer").hide();
   console.log("Using an accuracy of " + latLongAccuracy);
   clearMarkers();
   $("#loading").show();

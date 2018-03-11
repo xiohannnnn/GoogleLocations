@@ -9,15 +9,32 @@
   </head>
   <body>
     <div id="container">
+
       <div id="map"></div>
-      <input id="upload" type="file"/>
+      
+      <div id="uploadContainer">
+        <span>
+          <h1><a href="https://github.com/thatguywiththatname/GoogleLocations">Read the GitHub repo for more information</a></h1>
+          <br/>
+          This website outputs a lot of useful information to the console, <b>press F12 and then select the 'Console' tab</b>
+          <br/><br/>
+          Load your "Location History.json" using the button below
+          <br/><br/>
+          <b>Your information is NOT sent or stored anywhere, all the processing and calculations happen locally on YOUR machine</b>
+          <br/><br/><br/>
+          <input id="uploadButton" type="file"/>
+          <br/><br/><br/>
+          You will need to reload the page to use a different file
+        </span>
+      </div>
+      
       <div id="loading">
         <span id="loadingSpan">
           Loading...
         </span>
       </div>
+   
     </div>
-    <script src="markerclusterer/markerclusterer_packed.js"></script>
     <script src="res/main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYV9a9mYgFcEeWbcvH7f6eFNCjkgjzBzg&callback=initMap"></script>
   </body>

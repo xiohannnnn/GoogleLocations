@@ -1,8 +1,13 @@
 html, body {
     font-family: "Arial";
+    font-size: 18px;
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+h1 {
+    font-size: 20px;
 }
 
 #container {
@@ -16,12 +21,31 @@ html, body {
     z-index: 1;
 }
 
-#upload {
-    position: absolute;
-    left: 10px;
-    top: 100px;
-    width: 90px;
+#uploadContainer {
+    /*
+     * See https://stackoverflow.com/a/35993237
+     * I have no ieda why this centers it, but it works
+     */
+    position: fixed;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    
+    text-align: center;
+    height: 500px;
+    width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0.95;
+    background-color: grey;
     z-index: 2;
+}
+#uploadButton {
+    text-align: center;
+    margin: auto;
+    z-index: 3;
 }
 
 #loading {
@@ -32,7 +56,7 @@ html, body {
     width: 100%;
     background-color: darkgray;
     opacity: 0.5;
-    z-index: 3;
+    z-index: 99;
     text-align: center;
     font-size: 100px;
 }
