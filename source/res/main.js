@@ -1,26 +1,5 @@
-// - - - - - - - - - //
-// Do this stuff before anything else
-// - - - - - - - - - //
+// Before anything else
 $("#loading").hide();
-
-alert(
-  `
-  This website outputs a lot of useful information to the
-  console, press F12 and then select the 'Console' tab to
-  see what is going on, and what options you can change
-  `
-);
-
-console.log(`
-  Before uploading your file, if you want to change the accuracy of
-  the plotted points, set the variable latLongAccuracy equal to the
-  integer of the decimal places wanted.
-  
-  Read this wikipedia table to see what they mean:
-  https://en.wikipedia.org/wiki/Decimal_degrees#Precision
-
-  For example: latLongAccuracy = 5\n
-`);
 
 
 // - - - - - - - - - //
@@ -52,11 +31,11 @@ function onReaderDone(event){
 
   console.log("100% processed");
   $("#loading").hide();
-  console.log("All processing done");
 
   let mbUsed = window.performance.memory.usedJSHeapSize / 1000000;
   console.log("Currently using " + mbUsed + "MB of memory");
-
+  
+  console.log("Refresh the page to load another file");
 }
 
 document.getElementById("upload").addEventListener("change", (event) => {
@@ -89,6 +68,7 @@ function initMap() {
       mapTypeId: "hybrid"
     }
   );
+  console.log("Map ready");
 }
 
 
