@@ -20,6 +20,15 @@ alert(
 
 
 // * * * * * * * * * //
+// Declare Options (make these user editable)
+// * * * * * * * * * //
+
+// https://en.wikipedia.org/wiki/Decimal_degrees#Precision
+// The less accurate, the less markers, the better the performance when navigating the map
+let latLongAccuracy = 5;
+
+
+// * * * * * * * * * //
 // File upload + Parsing + Plotting
 // * * * * * * * * * //
 function onReaderDone(event){
@@ -29,11 +38,12 @@ function onReaderDone(event){
 
   console.log("Processing lat/long from JSON obj");
   $.each(data.locations, function(key, val) {
-    let lat = val.latitudeE7 / 10000000;
-    let lng = val.longitudeE7 / 10000000;
+    let lat = (val.latitudeE7 / 10000000).toFixed(latLongAccuracy);
+    let lng = (val.longitudeE7 / 10000000).toFixed(latLongAccuracy);
     createMarker(lat, lng);
     if (key % 10000 == 0) {
       console.log(Math.round(key / divideBy) + "% processed");
+      $('#loadingSpan').html(Math.round(key / divideBy) + "% processed").show();
     }
   });
 
@@ -59,7 +69,7 @@ document.getElementById("upload").addEventListener("change", (event) => {
 // * * * * * * * * * //
 // Main Map Function(s)
 // * * * * * * * * * //
-let marker_positions = []; // So there aren"t multiple markers in the same place
+let marker_positions = [];  // So there aren't multiple markers in the same place
 
 function initMap() {
   console.log("Initialising map");
@@ -74,12 +84,6 @@ function initMap() {
       zoom: 2,
       mapTypeId: "hybrid"
     }
-  );
-  console.log("Initialising markerClusterer");
-  markerClusterer = new MarkerClusterer(
-    map,
-    [],
-    {imagePath:"markerclusterer/images/m"}
   );
 }
 
@@ -109,7 +113,6 @@ function search() {
 function clearMarkers() {
   console.log("Clearing all markers");
   marker_positions = [];
-  markerClusterer.clearMarkers();
 }
 
 function createMarker(lat, lng) {
@@ -122,7 +125,6 @@ function createMarker(lat, lng) {
         map: map,
         icon: "res/redDot.png"
     });
-    markerClusterer.addMarker(marker);
     marker_positions.push(current_lat_lng);
   }
 }
