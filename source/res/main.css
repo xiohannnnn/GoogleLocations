@@ -1,6 +1,6 @@
 html, body {
     font-family: "Arial";
-    font-size: 18px;
+    font-size: 17px;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -8,6 +8,10 @@ html, body {
 
 h1 {
     font-size: 20px;
+}
+
+h2 {
+    font-size: 19px;
 }
 
 #container {
@@ -34,7 +38,7 @@ h1 {
     left: 0;
     
     text-align: center;
-    height: 500px;
+    height: 480px;
     width: 400px;
     padding: 10px;
     border-radius: 5px;
@@ -42,9 +46,18 @@ h1 {
     background-color: grey;
     z-index: 2;
 }
+#accuracySlider {
+    position: relative;
+    top: 4px;
+    left: 5px;
+}
 #uploadButton {
     text-align: center;
     margin: auto;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 5px;
+    background-color: lightgray;
     z-index: 3;
 }
 

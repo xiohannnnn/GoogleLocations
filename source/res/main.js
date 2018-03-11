@@ -1,14 +1,21 @@
 // Before anything else
 $("#loading").hide();
 
+console.log(`
+--------------------------------------------------------------
+Your location information is NOT sent or stored anywhere, all
+the processing and calculations happen locally on YOUR machine
+--------------------------------------------------------------
+`);
+
 
 // - - - - - - - - - //
-// Declare Options (make these user editable)
+// Slider stuff
 // - - - - - - - - - //
-
-// https://en.wikipedia.org/wiki/Decimal_degrees#Precision
-// The less accurate, the less markers, the better the performance when navigating the map
-let latLongAccuracy = 5;
+// Update the accuracySliderValue whenver the slider is changed
+let accuracySlider = document.getElementById("accuracySlider");
+let accuracySliderOutput = document.getElementById("accuracySliderValue");
+accuracySlider.oninput = function() {accuracySliderOutput.innerHTML = this.value;}
 
 
 // - - - - - - - - - //
@@ -21,8 +28,9 @@ function onReaderDone(event){
 
   console.log("Processing lat/long from JSON obj");
   $.each(data.locations, function(key, val) {
-    let lat = (val.latitudeE7 / 10000000).toFixed(latLongAccuracy);
-    let lng = (val.longitudeE7 / 10000000).toFixed(latLongAccuracy);
+    let accuracy = accuracySlider.value;
+    let lat = (val.latitudeE7 / 10000000).toFixed(accuracy);
+    let lng = (val.longitudeE7 / 10000000).toFixed(accuracy);
     createMarker(lat, lng);
     if (key % 10000 == 0) {
       console.log(Math.round(key / divideBy) + "% processed");
@@ -31,17 +39,14 @@ function onReaderDone(event){
 
   console.log("100% processed");
   $("#loading").hide();
-
-  let mbUsed = window.performance.memory.usedJSHeapSize / 1000000;
-  console.log("Currently using " + mbUsed + "MB of memory");
+  marker_positions = null;  // Make marker_positions eligible for garbage collection
   
   console.log("Refresh the page to load another file");
 }
 
 document.getElementById("uploadButton").addEventListener("change", (event) => {
   $("#uploadContainer").hide();
-  console.log("Using an accuracy of " + latLongAccuracy);
-  clearMarkers();
+  console.log("Using an accuracy of " + accuracySlider.value);
   $("#loading").show();
   console.log("Reading file");
   let reader = new FileReader();
@@ -93,11 +98,6 @@ function search() {
         }
     });
   }
-}
-
-function clearMarkers() {
-  console.log("Clearing all markers");
-  marker_positions = [];
 }
 
 function createMarker(lat, lng) {
