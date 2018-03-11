@@ -43,7 +43,6 @@ function onReaderDone(event){
     createMarker(lat, lng);
     if (key % 10000 == 0) {
       console.log(Math.round(key / divideBy) + "% processed");
-      $('#loadingSpan').html(Math.round(key / divideBy) + "% processed").show();
     }
   });
 
