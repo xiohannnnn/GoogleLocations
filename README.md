@@ -1,4 +1,4 @@
-# GoogleLocation
+# GoogleLocations
 
 [link](https://thatguywiththatname.github.io/GoogleLocations/source)
 
