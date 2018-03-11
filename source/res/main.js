@@ -19,18 +19,18 @@ alert(
 );
 
 
-// * * * * * * * * * //
+// - - - - - - - - - //
 // Declare Options (make these user editable)
-// * * * * * * * * * //
+// - - - - - - - - - //
 
 // https://en.wikipedia.org/wiki/Decimal_degrees#Precision
 // The less accurate, the less markers, the better the performance when navigating the map
 let latLongAccuracy = 5;
 
 
-// * * * * * * * * * //
+// - - - - - - - - - //
 // File upload + Parsing + Plotting
-// * * * * * * * * * //
+// - - - - - - - - - //
 function onReaderDone(event){
   console.log("Read done, parsing");
   let data = JSON.parse(event.target.result);
@@ -57,6 +57,7 @@ function onReaderDone(event){
 }
 
 document.getElementById("upload").addEventListener("change", (event) => {
+  console.log("Using an accuracy of " + latLongAccuracy);
   clearMarkers();
   $("#loading").show();
   console.log("Reading file");
@@ -66,9 +67,9 @@ document.getElementById("upload").addEventListener("change", (event) => {
 });
 
 
-// * * * * * * * * * //
+// - - - - - - - - - //
 // Main Map Function(s)
-// * * * * * * * * * //
+// - - - - - - - - - //
 let marker_positions = [];  // So there aren't multiple markers in the same place
 
 function initMap() {
@@ -88,9 +89,9 @@ function initMap() {
 }
 
 
-// * * * * * * * * * //
+// - - - - - - - - - //
 // Utility Function(s)
-// * * * * * * * * * //
+// - - - - - - - - - //
 function search() {
   let address = document.getElementById("searchBox").value;
   console.log("Searching for " + address);
