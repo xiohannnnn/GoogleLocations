@@ -20,7 +20,7 @@ Before uploading your file, if you want to change the accuracy of the plotted po
 
 **Why would I change the accuracy?**
 
-The more points you have, the laggier the loading andmap will become. Reducing the accuracy reduces the number of points that can be plotted in any one place, reducing load time and map lag.
+The more points you have, the laggier the loading and map will become. Reducing the accuracy reduces the number of points that can be plotted in any one place, reducing load time and map lag.
 
 Read this wikipedia table to see what accuracy values can be used:
 
