@@ -1,22 +1,26 @@
-// Before doing anything, hide loading div
+// - - - - - - - - - //
+// Do this stuff before anything else
+// - - - - - - - - - //
 $("#loading").hide();
 
-// Let user know they should look at the console
-// Probably put this in a closable div at some point
 alert(
   `
-  /////////// WARNING \\\\\\\\\\\\\\\\\\\\\\
-  Performance may drop if you are
-  loading hundreds of thousands
-  of co-ordinates
-  ----------- READ ME -----------
-  This website outputs a lot of
-  useful information to the
-  console, press F12 and then
-  select the 'Console' tab to see
-  what is going on
+  This website outputs a lot of useful information to the
+  console, press F12 and then select the 'Console' tab to
+  see what is going on, and what options you can change
   `
 );
+
+console.log(`
+  Before uploading your file, if you want to change the accuracy of
+  the plotted points, set the variable latLongAccuracy equal to the
+  integer of the decimal places wanted.
+  
+  Read this wikipedia table to see what they mean:
+  https://en.wikipedia.org/wiki/Decimal_degrees#Precision
+
+  For example: latLongAccuracy = 5\n
+`);
 
 
 // - - - - - - - - - //
