@@ -14,13 +14,13 @@ This website outputs a lot of useful information to the console, press F12 and t
 
 ## Options
 
-### Point accuracy
+### Marker accuracy
 
-Before uploading your file, if you want to change the accuracy of the plotted points, set the variable latLongAccuracy equal to the integer of the decimal places wanted. The default is `5`
+Before uploading your file, if you want to change the accuracy of the plotted markerss, set the variable latLongAccuracy equal to the integer of the decimal places wanted. The default is `5`
 
 **Why would I change the accuracy?**
 
-The more points you have, the laggier the loading and map will become. Reducing the accuracy reduces the number of points that can be plotted in any one place, reducing load time and map lag.
+The more markers you have, the laggier the loading and map will become. Reducing the accuracy reduces the number of markers that can be plotted in any one place, reducing load time and map lag.
 
 Read this wikipedia table to see what accuracy values can be used:
 
