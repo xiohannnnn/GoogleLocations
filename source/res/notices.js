@@ -13,8 +13,8 @@ console.log(`
   -----------------------------------------------------------------
 
   Before uploading your file, if you want to change the accuracy of
-  the plotted points, set the variable latLongAccuracy equal to the
-  integer of the decimal places wanted. The default is 5
+  the plotted markers, set the variable latLongAccuracy equal to
+  the integer of the decimal places wanted. The default is 5
 
   Read this wikipedia table to see what they mean:
   https://en.wikipedia.org/wiki/Decimal_degrees#Precision
