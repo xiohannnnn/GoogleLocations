@@ -1,6 +1,6 @@
-[Google Maps Version](https://thatguywiththatname.github.io/GoogleLocations/source/GoogleMaps)
+**[Google Maps Version](https://thatguywiththatname.github.io/GoogleLocations/source/GoogleMaps)**
 
-[LeafletJS Version](https://thatguywiththatname.github.io/GoogleLocations/source/LeafletJS)
+**[LeafletJS Version](https://thatguywiththatname.github.io/GoogleLocations/source/LeafletJS)**
 
 ## How to get your location file
 
