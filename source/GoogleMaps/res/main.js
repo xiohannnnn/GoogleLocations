@@ -25,13 +25,14 @@ function onReaderDone(event){
   console.log("Read done, parsing");
   let data = JSON.parse(event.target.result);
   let divideBy = data.locations.length / 100;
+  let accuracy = accuracySlider.value;
 
   console.log("Processing lat/long from JSON obj");
   $.each(data.locations, function(key, val) {
-    let accuracy = accuracySlider.value;
-    let lat = (val.latitudeE7 / 10000000).toFixed(accuracy);
-    let lng = (val.longitudeE7 / 10000000).toFixed(accuracy);
-    createMarker(lat, lng);
+    createMarker(
+      (val.latitudeE7 / 10000000).toFixed(accuracy),
+      (val.longitudeE7 / 10000000).toFixed(accuracy)
+    );
     if (key % 10000 == 0) {
       console.log(Math.round(key / divideBy) + "% processed");
     }
