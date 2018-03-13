@@ -21,7 +21,7 @@ accuracySlider.oninput = function() {accuracySliderOutput.innerHTML = this.value
 // - - - - - - - - - //
 // File upload + Parsing + Plotting
 // - - - - - - - - - //
-function onReaderDone(event){
+function onReaderDone(event) {
   console.log("Read done, parsing");
   let data = JSON.parse(event.target.result);
   let divideBy = data.locations.length / 100;
@@ -76,6 +76,7 @@ function initMap() {
     }
   );
   console.log("Map ready");
+  console.log("GoogleLocations Version 0.2");
 }
 
 
