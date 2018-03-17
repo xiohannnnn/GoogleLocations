@@ -88,8 +88,7 @@ function search() {
   console.log("Searching for " + address);
   if (address != "") {
     geocoder.geocode({
-        "address": address,
-        componentRestrictions: {country: "UK"}
+        "address": address
       },
       function (results, status) {
         if (status == "OK") {
